@@ -137,13 +137,6 @@ AI: Your name is Musharraf.
 ```bash
 pip install -U langchain langchain-openai streamlit python-dotenv
 ```
----
-
-## **📘 References**
-
-- [LangChain Docs](https://docs.langchain.com/oss/python/langchain/overview)
-- [Streamlit Docs](https://docs.streamlit.io/)
-- [OpenAI API Docs](https://platform.openai.com/docs/api-reference/introduction)
 
 ---
 
@@ -152,6 +145,14 @@ pip install -U langchain langchain-openai streamlit python-dotenv
 ![Landing Page](screenshots/landing.png)
 ![First Coversation](screenshots/coversation_starter.png)
 ![Saved Response](screenshots/saved_response.png)
+
+---
+
+## **📘 References**
+
+- [LangChain Docs](https://docs.langchain.com/oss/python/langchain/overview)
+- [Streamlit Docs](https://docs.streamlit.io/)
+- [OpenAI API Docs](https://platform.openai.com/docs/api-reference/introduction)
 
 ---
 
