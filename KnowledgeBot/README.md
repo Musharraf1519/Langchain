@@ -1,11 +1,11 @@
-# 🤖 KnowledgeBot — LangChain-Powered Chatbot
+# **🤖 KnowledgeBot — LangChain-Powered Chatbot**
 
 KnowledgeBot is an interactive chatbot built using **LangChain**, **Streamlit**, and **OpenAI's GPT-5 Nano model**.  
 It remembers your past messages using **conversation memory** and provides clear, context-aware answers.
 
 ---
 
-## 🚀 Features
+## **🚀 Features**
 - 🧠 **Conversational Memory** — Remembers what you said earlier  
 - 💬 **Natural Chat Flow** — Powered by GPT-5 Nano  
 - ⚙️ **LangChain Integration** — Uses ConversationChain and Prompt Templates  
@@ -13,7 +13,7 @@ It remembers your past messages using **conversation memory** and provides clear
 
 ---
 
-## 🧩 Tech Stack
+## **🧩 Tech Stack**
 - **Python 3.10+**
 - **LangChain**
 - **OpenAI (GPT-5 Nano)**
@@ -22,7 +22,7 @@ It remembers your past messages using **conversation memory** and provides clear
 
 ---
 
-## 🧠 System Architecture
+## **🧠 System Architecture**
 
 Below is a simple diagram showing how KnowledgeBot works under the hood:
 
@@ -65,7 +65,7 @@ Below is a simple diagram showing how KnowledgeBot works under the hood:
 ```
 ---
 
-## 📁 Folder Structure
+## **📁 Folder Structure**
 Langchain/<br>
 ├── knowledgebot.py       # Main chatbot script<br>
 ├── .env                  # Environment file (stores API key)<br>
@@ -74,7 +74,7 @@ Langchain/<br>
 
 ---
 
-## ⚙️ Setup Instructions
+## **⚙️ Setup Instructions**
 
 1. Clone the Repository
 ```bash
@@ -106,16 +106,17 @@ pip install -r requirements.txt
 
 **⚠️ Important: Never commit your .env file to GitHub. It contains sensitive credentials.**
 
-5. Run the Chatbot
+--- 
+
+## **Usage**
+
+Run the Chatbot
     To start the Streamlit app:
 ```bash
     streamlit run knowledgebot.py
-    ```
+```
 
-
-Then open the displayed local URL (usually http://localhost:8501) in your browser.
-
-💬 Example Interaction
+**💬 Example Interaction**
 User: Hello!
 AI: Hi there! How can I assist you today?
 User: Remember my name is Musharraf.
@@ -123,32 +124,44 @@ AI: Got it, Musharraf! Nice to meet you.
 User: What’s my name?
 AI: Your name is Musharraf.
 
-🧰 Troubleshooting
+---
 
-Invalid API Key
+## **🧰 Troubleshooting**
 
-Ensure .env file exists in the same directory as knowledgebot.py
+**Invalid API Key**
+- Ensure .env file exists in the same directory as knowledgebot.py
+- Verify the key is active on OpenAI’s API Dashboard
 
-Verify the key is active on OpenAI’s API Dashboard
-
-Module Not Found
-
-Run:
-
+**Module Not Found**
+- Run:
+```bash
 pip install -U langchain langchain-openai streamlit python-dotenv
+```
+---
 
-📘 References
+## **📘 References**
 
-LangChain Docs
+- [LangChain Docs](https://docs.langchain.com/oss/python/langchain/overview)
+- [Streamlit Docs](https://docs.streamlit.io/)
+- [OpenAI API Docs](https://platform.openai.com/docs/api-reference/introduction)
 
-Streamlit Docs
+---
 
-OpenAI API Docs
+## **📸 Screenshots**
 
-🧑‍💻 Author
+![Landing Page](screenshots/landing.png)
+![First Coversation](screenshots/coversation_starter.png)
+![Saved Response](screenshots/saved_response.png)
 
-Musharraf Khan
-Building AI-powered apps with Python, LangChain & Streamlit
-🔗 GitHub
+---
+
+## 👨‍💻 Author
+
+<b>Musharraf Hussain Khan</b><br>
+[GitHub](https://github.com/Musharraf1519)<br>
+[LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)<br>
+Email: musharrafhussainkhann@example.com
+
+---
 
 ## **⭐ If you found this project useful, consider giving it a star!**
