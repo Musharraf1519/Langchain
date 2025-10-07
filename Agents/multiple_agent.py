@@ -46,7 +46,7 @@ agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
 st.title("🧮 Multi-Tool Agent")
 st.subheader("Your assistant for calculations, web search, and summarization!")
 
-task = st.text_input("💡 Enter your task:")
+task = st.text_area("💡 Enter your task:")
 
 if task:  # Only run if user entered something
     with st.spinner("Agent is thinking..."):
