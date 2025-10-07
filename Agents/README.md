@@ -77,4 +77,36 @@ OPENAI_API_KEY=your_openai_api_key
 SERPAPI_API_KEY=your_serpapi_api_key      # For Multi-Tool Agent
 WEATHER_API_KEY=your_openweathermap_key   # For Weather Agent
 ```
+---
 
+##🛠️ Dependencies
+- Python 3.10+
+- Streamlit
+- LangChain
+- LangChain OpenAI integration (langchain-openai)
+- Requests (Weather Agent)
+- dotenv
+
+---
+
+##🔗 References
+- LangChain Documentation
+- OpenAI API
+- SerpAPI
+- OpenWeather API
+
+---
+
+##💡 Notes
+- Always keep your API keys private and store them in .env.
+- Use AgentType.ZERO_SHOT_REACT_DESCRIPTION for flexible multi-tool agent execution.
+- Streamlit session states allow persisting conversation/memory across user inputs for interactive apps.
+
+---
+
+## 👨‍💻 Author
+
+<b>Musharraf Hussain Khan</b><br>
+[GitHub](https://github.com/Musharraf1519)<br>
+[LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)<br>
+Email: musharrafhussainkhann@gmail.com
