@@ -111,3 +111,7 @@ WEATHER_API_KEY=your_openweathermap_key   # For Weather Agent
 [GitHub](https://github.com/Musharraf1519)<br>
 [LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)<br>
 Email: musharrafhussainkhann@gmail.com
+
+---
+
+## **⭐ If you found this project useful, consider giving it a star!**
