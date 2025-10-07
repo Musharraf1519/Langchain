@@ -51,6 +51,7 @@ streamlit run weather_agent.py
 ```
 
 ---
+
 ##⚡ Setup
 
 1. Clone the repository:
