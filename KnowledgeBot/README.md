@@ -142,8 +142,9 @@ pip install -U langchain langchain-openai streamlit python-dotenv
 
 ## **📸 Screenshots**
 
-![Landing Page](screenshots/landing.png)
+
 ![First Coversation](screenshots/coversation_starter.png)
+![Landing Page](screenshots/landing.png)
 ![Saved Response](screenshots/saved_response.png)
 
 ---
