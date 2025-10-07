@@ -161,7 +161,7 @@ pip install -U langchain langchain-openai streamlit python-dotenv
 <b>Musharraf Hussain Khan</b><br>
 [GitHub](https://github.com/Musharraf1519)<br>
 [LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)<br>
-Email: musharrafhussainkhann@example.com
+Email: musharrafhussainkhann@gmail.com
 
 ---
 
