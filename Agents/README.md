@@ -52,7 +52,7 @@ streamlit run weather_agent.py
 
 ---
 
-##⚡ Setup
+## ⚡ Setup
 
 1. Clone the repository:
 ```bash
@@ -80,7 +80,7 @@ WEATHER_API_KEY=your_openweathermap_key   # For Weather Agent
 ```
 ---
 
-##🛠️ Dependencies
+## 🛠️ Dependencies
 - Python 3.10+
 - Streamlit
 - LangChain
@@ -90,7 +90,7 @@ WEATHER_API_KEY=your_openweathermap_key   # For Weather Agent
 
 ---
 
-##🔗 References
+## 🔗 References
 - LangChain Documentation
 - OpenAI API
 - SerpAPI
@@ -98,7 +98,7 @@ WEATHER_API_KEY=your_openweathermap_key   # For Weather Agent
 
 ---
 
-##💡 Notes
+## 💡 Notes
 - Always keep your API keys private and store them in .env.
 - Use AgentType.ZERO_SHOT_REACT_DESCRIPTION for flexible multi-tool agent execution.
 - Streamlit session states allow persisting conversation/memory across user inputs for interactive apps.
