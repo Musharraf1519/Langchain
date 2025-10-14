@@ -125,10 +125,10 @@ openai
 
 ## 👨‍💻 Author
 
-**Musharraf Hussain Khan**
-AI | Data | LangChain | Streamlit Projects
-📧 [Email me](mailto:musharrafhussainkhann@gmail.com)
-[GitHub](https://github.com/Musharraf1519)
+**Musharraf Hussain Khan**<br>
+AI | Data | LangChain | Streamlit Projects<br>
+📧 [Email me](mailto:musharrafhussainkhann@gmail.com)<br
+[GitHub](https://github.com/Musharraf1519)<br>
 [LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)
 
 
