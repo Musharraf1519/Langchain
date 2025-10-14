@@ -25,4 +25,56 @@ This app lets you **speak commands** like:
 ---
 
 ## 🧩 Project Structure
+voice-agent/<br>
+│<br>
+├─ app.py # Main Streamlit app<br>
+├─ .env # Contains your OpenAI API key<br>
+├─ requirements.txt # All dependencies<br>
+└─ README.md # Documentation<br>
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone or create the project folder
+```bash
+git clone https://github.com/yourusername/voice-agent.git
+cd voice-agent
+```
+
+### 2️⃣ Create a virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate       # On Windows
+# OR
+source venv/bin/activate    # On Mac/Linux
+```
+### 3️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4️⃣ Add your OpenAI API key
+Create a file named .env in the project folder and add:
+```ini
+OPENAI_API_KEY=your_openai_api_key_here
+```
+### 5️⃣ Run the app
+```bash
+streamlit run app.py
+```
+---
+
+## 🗣️ How to Use
+
+1. Click "Start Listening" in the Streamlit UI.
+2. Speak a command, for example:
+     - “What time is it?”
+     - “Open Google and search for pandas library”
+     - “Search Python tutorials on YouTube”
+3. The assistant will:
+     - Recognize your voice
+     - Understand your intent
+     - Execute the correct tool or respond directly
+     - Speak the response back to you
+4. Say “stop”, “exit”, or “quit” to end the session.
 
