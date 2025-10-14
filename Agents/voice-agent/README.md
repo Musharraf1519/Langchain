@@ -26,7 +26,6 @@ This app lets you **speak commands** like:
 
 ## 🧩 Project Structure
 voice-agent/<br>
-│<br>
 ├─ app.py # Main Streamlit app<br>
 ├─ .env # Contains your OpenAI API key<br>
 ├─ requirements.txt # All dependencies<br>
@@ -62,6 +61,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 ```bash
 streamlit run app.py
 ```
+
 ---
 
 ## 🗣️ How to Use
@@ -79,6 +79,7 @@ streamlit run app.py
 4. Say “stop”, “exit”, or “quit” to end the session.
 
 ---
+
 ## 🧠 Tech Stack
 
 | Component                               | Purpose                                |
@@ -91,4 +92,45 @@ streamlit run app.py
 | **dotenv**                              | Securely load API keys                 |
 | **webbrowser**                          | Open Google/YouTube searches           |
 
+---
 
+## ⚠️ Common Issues & Fixes
+🔸 Error: RuntimeError: run loop already started
+
+Use this safe threaded speak() function:
+```python
+import threading
+
+def speak(text):
+    def _speak():
+        engine.stop()
+        engine.say(text)
+        engine.runAndWait()
+    threading.Thread(target=_speak, daemon=True).start()
+```
+
+---
+
+## 🧰 requirements.txt
+```nginx
+streamlit
+speechrecognition
+pyttsx3
+python-dotenv
+langchain-openai
+openai
+```
+
+---
+
+## 👨‍💻 Author
+
+<b>Musharraf Hussain Khan</b><br>
+AI | Data | LangChain | Streamlit Projects<br>
+📧 [Email me](mailto:musharrafhussainkhann@gmail.com)
+[GitHub](https://github.com/Musharraf1519)<br>
+[LinkedIn](https://www.linkedin.com/in/musharraf-hussain-khan/)<br>
+
+---
+
+## **⭐ If you found this project useful, give it a star and share it with other AI learners!**
