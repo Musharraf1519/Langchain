@@ -120,6 +120,14 @@ python-dotenv
 langchain-openai
 openai
 ```
+---
+
+## 📸 Screenshots
+
+![main_ui](screenshots/main_ui.png)
+![listening](screenshots/listening.png)
+![response](screenshots/response.png)
+![stop](screenshots/stop.png)
 
 ---
 
