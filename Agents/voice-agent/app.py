@@ -132,6 +132,7 @@ if stop_btn:
     st.session_state.response = "Assistant stopped."
     speak("Goodbye! Assistant stopped.")
 
+
 # Output
 if st.session_state.response:
     st.subheader("🤖 Assistant says:")
