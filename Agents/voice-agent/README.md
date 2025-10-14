@@ -78,3 +78,17 @@ streamlit run app.py
      - Speak the response back to you
 4. Say “stop”, “exit”, or “quit” to end the session.
 
+---
+## 🧠 Tech Stack
+
+| Component                               | Purpose                                |
+| --------------------------------------- | -------------------------------------- |
+| **Streamlit**                           | Web-based interface                    |
+| **SpeechRecognition**                   | Convert voice → text                   |
+| **pyttsx3**                             | Convert text → speech                  |
+| **LangChain**                           | Build an intelligent agent with tools  |
+| **OpenAI GPT (via `langchain_openai`)** | Understand and respond to user queries |
+| **dotenv**                              | Securely load API keys                 |
+| **webbrowser**                          | Open Google/YouTube searches           |
+
+
