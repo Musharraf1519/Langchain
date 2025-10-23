@@ -1,84 +1,52 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
-from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from dotenv import load_dotenv
 import os
 
-# --- Configuration & Initialization ---
-
-# Load API key from .env file
+# --- Load API Key ---
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
-# Check if API Key is available
 if not api_key:
-    st.error("OPENAI_API_KEY not found. Please create a .env file or set the environment variable.")
+    st.error("❌ OPENAI_API_KEY not found. Please create a .env file or set the environment variable.")
     st.stop()
 
-# Streamlit UI Setup
+# --- Streamlit UI Setup ---
 st.set_page_config(page_title="KnowledgeBot", page_icon="🤖", layout="centered")
 st.title("KnowledgeBot 🤖")
-st.markdown("Ask me anything! I will remember our conversation history across multiple turns.")
+st.markdown("Hey there 👋 I'm KnowledgeBot — your chat companion for facts, logic, and learning. What are we tackling today?")
 
+# --- Initialize Chat State ---
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        SystemMessage(content="You are KnowledgeBot, a helpful and professional AI assistant.")
+    ]
 
-# Use st.session_state to persist the conversation chain and memory
-if 'conversation' not in st.session_state:
-    # Initialize the LLM 
-    chat_model = ChatOpenAI(model_name="gpt-5-nano", temperature=0.6, openai_api_key=api_key)
+# --- Initialize Chat Model ---
+llm = ChatOpenAI(
+    model="gpt-4o-mini",   # or "gpt-4-turbo"
+    temperature=0.6,
+    openai_api_key=api_key,
+)
 
-    # Create memory with the specified key
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+# --- Chat Interface ---
+for msg in st.session_state.messages:
+    if isinstance(msg, HumanMessage):
+        st.chat_message("user").markdown(msg.content)
+    elif isinstance(msg, AIMessage):
+        st.chat_message("assistant").markdown(msg.content)
 
-    # Define the custom prompt, correctly utilizing the 'chat_history' memory key
-    custom_prompt = ChatPromptTemplate.from_messages([
-        SystemMessagePromptTemplate.from_template(
-            "You are a professional and helpful AI assistant. You remember what the user says and provide clear, concise answers."
-        ),
-        # The ConversationChain will automatically populate {chat_history} and {input}
-        HumanMessagePromptTemplate.from_template(
-            "Conversation so far:\n{chat_history}\n\nUser: {input}"
-        )
-    ])
+# User input
+if prompt := st.chat_input("Type your message..."):
+    # Display user message
+    st.chat_message("user").markdown(prompt)
+    st.session_state.messages.append(HumanMessage(content=prompt))
 
-    # Create and store the conversation chain in session state
-    st.session_state.conversation = ConversationChain(
-        llm=chat_model,
-        prompt=custom_prompt,
-        memory=memory,
-        verbose=False # Set to True to see how the chain processes the prompt
-    )
+    # Generate response
+    with st.spinner("Thinking..."):
+        response = llm.invoke(st.session_state.messages)
 
-# --- Conversation Logic ---
-
-# Retrieve the conversation object from session state
-conversation = st.session_state.conversation
-
-# Input from user
-user_input = st.text_input("Your message:", key="user_input_key")
-
-if user_input:
-    # 1. Get the response from the LLM
-    # The .predict method returns a string in this configuration
-    response = conversation.predict(input=user_input)
-
-    # 2. Display the response
-    st.markdown("---")
-    st.markdown(f"**🤖 KnowledgeBot:** {response}")
-    st.markdown("---")
-
-
-# # Optional: Show conversation history for verification
-# if conversation.memory.chat_memory.messages:
-#     st.markdown("### Conversation History (For Debugging)")
-#     # LangChain stores history as HumanMessage and AIMessage objects
-#     for msg in conversation.memory.chat_memory.messages:
-#         role = "👤 You" if msg.type == "human" else "🤖 AI"
-#         st.markdown(f"**{role}:** {msg.content}")
-
-#     # Button to clear the history
-#     if st.button("Clear Conversation History"):
-#         conversation.memory.clear()
-#         st.session_state.conversation = conversation # Update session state
-#         st.rerun() # Rerun the script to reflect the changes
+    # Display AI message
+    st.chat_message("assistant").markdown(response.content)
+    st.session_state.messages.append(AIMessage(content=response.content))
