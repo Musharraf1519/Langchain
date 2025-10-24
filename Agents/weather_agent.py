@@ -54,7 +54,6 @@ agent = initialize_agent(
     handle_parsing_errors=True 
 )
 
-# Streamlit or CLI input
 
 # Streamlit UI
 st.title("🌤️ Weather Agent")
