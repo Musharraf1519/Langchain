@@ -18,6 +18,7 @@ def get_weather(city: str) -> str:
     """Fetch current weather information for a given city."""
     try:
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={weather_api_key}&units=metric"
+        
         response = requests.get(url)
         data = response.json()
 
