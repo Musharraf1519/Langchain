@@ -29,9 +29,6 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_key=OPENA
 # Define Flight Tool
 # -----------------------------
 def get_flights(query: str) -> str:
-    import re
-    import pandas as pd
-    from amadeus import ResponseError
 
     try:
         # Regex to extract cities and dates
