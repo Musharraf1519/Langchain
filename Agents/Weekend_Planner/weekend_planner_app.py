@@ -250,7 +250,7 @@ master_agent = initialize_agent(
 # 4. STREAMLIT UI & AGENT EXECUTION
 # -----------------------------
 
-st.title("✈️🏨 Multi-Agent Weekend Planner 🤖")
+st.title("✈️🏨 Weekend Planner 🤖")
 st.markdown("This uses a single **Master Agent (LLM)** to decide the sequence and inputs for the three specialized tools.")
 
 # Input fields
